@@ -1,0 +1,37 @@
+﻿<!Doctype html>
+
+<html>
+<head>
+    <title>Vopros 4/1</title>
+   <meta charset="utf-8"> 
+</head>
+<body>
+   <script>
+       var arr = ["воз", "зов", "апельсин", "спаниель","дом", "мода"];
+       var final_array = [];
+       var num = 0;
+       function getAnagrammArray(){
+        var arr1 =[];
+        
+           for(var i =0; i<arr.length; i++){
+                arr1[i]= arr[i] 
+                 let splitedArray = arr[i].split('');
+                 splitedArray.sort(); 
+                 arr[i] = splitedArray.join('');               
+           }
+           for(let i= 0; i <arr.length-1;i++){
+               for(let j = 1; j<arr.length;j++){
+                   if((arr[i]==arr[j]) && (i!=j) && (j>i)){
+                   arr1.push(arr1[i] + ' ' + arr1[j]);               
+                   final_array= arr1;
+                   num=num+1;                     
+                   }                  
+               }
+           }           
+        }      
+        getAnagrammArray(arr);        
+        final_array.splice(0, (final_array.length-num));
+        alert(final_array);        
+        </script>
+</body>
+<html>
